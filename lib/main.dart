@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'contactBook.dart';
 
 void main() {
@@ -35,11 +36,14 @@ class HomePage extends StatelessWidget {
     final contactBook = ContactBook();
     return Scaffold(
         appBar: AppBar(),
-        body: ListView.builder(itemBuilder: (context, index) {
-          final contact = contactBook.contact(atIndex: index)!;
-         return  ListTile(
-           title: Text(contact.name),
-         );
-        }, itemCount: contactBook.length,));
+        body: ListView.builder(
+          itemBuilder: (context, index) {
+            final contact = contactBook.contact(atIndex: index)!;
+            return ListTile(
+              title: Text(contact.name),
+            );
+          },
+          itemCount: contactBook.length,
+        ));
   }
 }
